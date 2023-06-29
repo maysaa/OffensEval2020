@@ -7,7 +7,8 @@ def parse_line(line):
     return line[0], line[1], int(line[2] == "OFF")
 
 def read_file(_set):
-    with open("OffensEval/"+ _set +".tsv", "r", encoding="utf-8") as fi:
+    # with open("OffensEval/"+ _set +".tsv", "r", encoding="utf-8") as fi:
+    with open("AFND_Dataset/"+ _set +".tsv", "r", encoding="utf-8") as fi:
         lines = fi.read().splitlines()
         ids, x_train, y_train = zip(*list(map(lambda x: parse_line(x), lines[1:])))
 
